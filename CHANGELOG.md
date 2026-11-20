@@ -4,11 +4,14 @@ All notable changes to this project are documented here. Format follows [Keep a 
 
 ## [Unreleased]
 
+## [0.7.0] — 2026-11-20
+
 ### Changed
 - **Palettes renamed after Vietnamese crafts and symbols.** `sakura` becomes `lotus` (sen, the national flower), `sumi` becomes `lacquer` (sơn mài), and `koi` becomes `lantern` (the lanterns of Hội An). The colours are unchanged; sites that set `colorTheme` to an old name must use the new one.
 - `scripts/capture-screenshots.sh` drives [agent-browser](https://github.com/vercel-labs/agent-browser) instead of the Playwright CLI, whose Chromium does not run on newer Ubuntu releases. Set `AGENT_BROWSER_EXECUTABLE_PATH` to use a system Chrome.
 
 ### Added
+- **Markdown output** — opt-in `Markdown` output format renders the profile as `README.md` (see the README, "Markdown output"), with `params.markdownFooter` for extra text at the end.
 - Release tags `v0.1.0` to `v0.4.0`, restored on their original theme commits.
 
 ## [0.6.0] — 2026-11-20

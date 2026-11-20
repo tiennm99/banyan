@@ -17,6 +17,7 @@ banyan/
 │   ├── _default/baseof.html    # HTML5 skeleton
 │   ├── index.html              # Home page entry (calls bio-card partial)
 │   ├── index.rss.xml           # RSS 2.0 feed of links/sections
+│   ├── index.markdown.md       # Markdown version of the page (opt-in)
 │   ├── _default/vcard.vcf      # vCard output template (opt-in)
 │   ├── _default/manifest.webmanifest  # PWA manifest (opt-in)
 │   └── partials/
@@ -24,6 +25,7 @@ banyan/
 │       ├── bio-card.html       # Main bio card with sections/links branching
 │       ├── link-button.html    # Individual link (with thumbnail / featured / scheduled / rel / note)
 │       ├── link-group.html     # Renders one <nav> of links (used by flat + sectioned modes)
+│       ├── link-visible.html   # Returns whether a link is inside its startDate/endDate window
 │       ├── icon.html           # Inline SVG icon lookup (data/icons.yaml → assets/icons/)
 │       ├── avatar.html         # Avatar: <picture> for local, <img> for URL, SVG initials fallback
 │       ├── share-button.html   # Opt-in Web Share button

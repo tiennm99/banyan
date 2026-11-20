@@ -7,6 +7,9 @@ theme = "banyan"
 # v0.4 demo (set params.rss = true and remove "RSS" from disableKinds).
 disableKinds = ["taxonomy", "term", "sitemap", "404"]
 
+# Keep the capital letters of the Markdown output's README.md file name.
+disablePathToLower = true
+
 # Register VCard + Manifest output formats so layouts/_default/vcard.vcf and
 # layouts/_default/manifest.webmanifest get rendered when their params are on.
 [mediaTypes."text/vcard"]
@@ -16,13 +19,19 @@ disableKinds = ["taxonomy", "term", "sitemap", "404"]
   suffixes = ["webmanifest"]
 
 [outputs]
-  home = ["HTML", "RSS", "Manifest"]
+  home = ["HTML", "RSS", "Manifest", "Markdown"]
 
 [outputFormats.VCard]
   mediaType      = "text/vcard"
   baseName       = "vcard"
   isPlainText    = true
   notAlternative = true
+
+# Markdown version of the page at /README.md (layouts/index.markdown.md).
+[outputFormats.Markdown]
+  mediaType   = "text/markdown"
+  baseName    = "README"
+  isPlainText = true
 
 [outputFormats.Manifest]
   mediaType      = "application/manifest+json"

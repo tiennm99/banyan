@@ -29,6 +29,7 @@ Banyan treats your bio page the same way: one root page that everything else bra
 - **Share button** — `navigator.share` with clipboard fallback + ARIA-live toast (`params.share`).
 - **QR code** — build-time PNG of the page Permalink via `images.QR` (`params.qr`).
 - **vCard download** — generated `.vcf` at `/vcard.vcf` for one-click contact import (`params.vcard`).
+- **Markdown output** — the same profile rendered as `README.md`, for a repo README or AI agents. See [Markdown output](#markdown-output).
 - **GA4 click analytics** — `[params.analytics]` block; auto-emits `data-analytics-event` + UTM injection. *GA4 sets cookies — consent is your responsibility.*
 
 **Lighthouse hardening (v0.5)**
@@ -119,6 +120,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
 | `qr` | bool | `false` | Render a collapsible `<details>` block with a build-time QR code (PNG) of the page Permalink. Requires Hugo ≥ 0.140 (`images.QR`). |
 | `vcard` | bool | `false` | Serve a vCard at `/vcard.vcf` and render a "Save contact" link. **Requires registering the `VCard` output format in `hugo.toml`** — see [output-format setup](#output-format-setup) below. |
 | `manifest` | bool | `false` | Emit a `<link rel="manifest">` and serve `/manifest.webmanifest`. **Requires registering the `Manifest` output format in `hugo.toml`** — see [output-format setup](#output-format-setup). |
+| `markdownFooter` | string | — | Markdown appended to the end of the [Markdown output](#markdown-output), after the footer line. |
 | `schemaWebSite` | bool | `false` | Emit a second JSON-LD block (`@type: WebSite`) alongside the always-on `Person` schema. Helps rich-snippet eligibility. |
 | `shortName` | string | first 12 chars of `name` | PWA `short_name` in `manifest.webmanifest`. Set when your name exceeds 12 chars. |
 | `themeBackground` | string (CSS color) | `#f4efe6` | PWA splash `background_color` in `manifest.webmanifest`. |
@@ -219,6 +221,30 @@ Add to `hugo.toml`:
 ```
 
 Only include the blocks you need. See `exampleSite/hugo.toml` for a working reference.
+
+## Markdown output
+
+Banyan can render the page a second time as Markdown: the name, avatar,
+tagline, bio and links, grouped by section and with the same visibility
+windows as the page. Use it as a repo README or to give AI agents a plain-text
+copy of the page. Register the format and add it to the home outputs:
+
+```toml
+disablePathToLower = true   # keeps the file name README.md, not readme.md
+
+[outputs]
+  home = ["HTML", "Markdown"]
+
+[outputFormats.Markdown]
+  mediaType   = "text/markdown"
+  baseName    = "README"
+  isPlainText = true
+```
+
+Hugo writes `public/README.md`, served at `/README.md`. Links and the avatar
+use absolute URLs built from `baseURL`, so the file also works outside the
+site, for example copied to a repo root. `params.markdownFooter` adds your own
+Markdown at the end.
 
 ## Analytics
 

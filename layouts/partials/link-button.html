@@ -3,14 +3,8 @@
        Reads ONLY from its dict argument (per docs/code-standards.md partial composition rule). */ -}}
 {{- $l := .link -}}
 {{- $a := .analytics -}}
-{{- /* Per-link visibility window: skip rendering when now < startDate or now > endDate.
-       Build-time evaluation only — re-evaluated at next site rebuild. */ -}}
-{{- $now := now -}}
-{{- $startOk := true -}}
-{{- $endOk := true -}}
-{{- with $l.startDate }}{{ $startOk = ge $now (time .) }}{{ end -}}
-{{- with $l.endDate }}{{ $endOk = le $now (time .) }}{{ end -}}
-{{- if and $startOk $endOk -}}
+{{- /* Skip links outside their startDate/endDate window. */ -}}
+{{- if partial "link-visible.html" $l -}}
 {{- $title := $l.title -}}
 {{- $url := $l.url -}}
 {{- $icon := $l.icon -}}

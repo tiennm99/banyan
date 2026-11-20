@@ -1,0 +1,9 @@
+{{- /* Return whether a link is inside its visibility window: false when
+       now < startDate or now > endDate. Build-time evaluation only, so the
+       result changes at the next site rebuild. Context: the link map. */ -}}
+{{- $now := now -}}
+{{- $startOk := true -}}
+{{- $endOk := true -}}
+{{- with .startDate }}{{ $startOk = ge $now (time .) }}{{ end -}}
+{{- with .endDate }}{{ $endOk = le $now (time .) }}{{ end -}}
+{{- return (and $startOk $endOk) -}}
