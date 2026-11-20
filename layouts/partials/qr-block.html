@@ -1,5 +1,5 @@
 {{- /* Render a QR code of the current page Permalink inside a collapsible <details>.
-       Gated by site.Params.qr = true. Uses Hugo's built-in images.QR (≥ 0.140).
+       Gated by site.Params.qr = true. Uses Hugo's built-in images.QR.
        The PNG is generated at build time and cached under resources/_gen/. */ -}}
 {{- if site.Params.qr -}}
 {{- $url := .Permalink -}}

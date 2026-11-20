@@ -2,7 +2,7 @@
 
 [![build](https://github.com/tiennm99/banyan/actions/workflows/build.yml/badge.svg)](https://github.com/tiennm99/banyan/actions/workflows/build.yml)
 [![license](https://img.shields.io/github/license/tiennm99/banyan)](LICENSE)
-[![Hugo](https://img.shields.io/badge/hugo-%E2%89%A50.140-ff4088?logo=hugo)](https://gohugo.io)
+[![Hugo](https://img.shields.io/badge/hugo-%E2%89%A50.154.5-ff4088?logo=hugo)](https://gohugo.io)
 
 A minimalist Hugo theme for link-in-bio pages, inspired by [Linktree](https://linktr.ee) and the [banyan](https://en.wikipedia.org/wiki/Banyan) tree of Vietnam: *one root, many branches*.
 
@@ -117,7 +117,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
 | `themeToggle` | bool | `false` | Render a sun/moon button in the footer + load the toggle script. |
 | `rss` | bool | `false` | Render an RSS 2.0 feed of `[[params.links]]` at `/index.xml` and emit `<link rel="alternate">` in `<head>`. Requires removing `RSS` from `disableKinds`. |
 | `share` | bool | `false` | Render a page share button using `navigator.share` with clipboard fallback. Loads `share.js` (~700 B) only when enabled. |
-| `qr` | bool | `false` | Render a collapsible `<details>` block with a build-time QR code (PNG) of the page Permalink. Requires Hugo ≥ 0.140 (`images.QR`). |
+| `qr` | bool | `false` | Render a collapsible `<details>` block with a build-time QR code (PNG) of the page Permalink. Uses Hugo's `images.QR`. |
 | `vcard` | bool | `false` | Serve a vCard at `/vcard.vcf` and render a "Save contact" link. **Requires registering the `VCard` output format in `hugo.toml`** — see [output-format setup](#output-format-setup) below. |
 | `manifest` | bool | `false` | Emit a `<link rel="manifest">` and serve `/manifest.webmanifest`. **Requires registering the `Manifest` output format in `hugo.toml`** — see [output-format setup](#output-format-setup). |
 | `markdownFooter` | string | — | Markdown appended to the end of the [Markdown output](#markdown-output), after the footer line. |

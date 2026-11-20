@@ -12,7 +12,7 @@ hugo server --themesDir ../.. --bind 0.0.0.0
 
 Open `http://localhost:1313/`. Edits to `layouts/`, `static/`, `data/`, and `assets/` hot-reload.
 
-Hugo Extended ≥ 0.128 required. CI pins 0.154.0.
+Hugo ≥ 0.154.5 required, the version in the current Ubuntu LTS (26.04); older releases are not supported. CI pins exactly that version so it tests the oldest supported Hugo. Raise the floor when a new Ubuntu LTS ships.
 
 ## Adding an icon
 

@@ -4,6 +4,11 @@ All notable changes to this project are documented here. Format follows [Keep a 
 
 ## [Unreleased]
 
+## [0.8.0] — 2026-11-20
+
+### Changed
+- **Minimum Hugo is now `0.154.5`** (was `0.140.0`), the version in the current Ubuntu LTS (26.04). Older Hugo releases are no longer supported, and CI builds with exactly `0.154.5` to test that floor.
+
 ## [0.7.0] — 2026-11-20
 
 ### Changed
