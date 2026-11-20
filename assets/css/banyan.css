@@ -1,6 +1,6 @@
 /* Banyan — minimalist link-in-bio Hugo theme
- * Aesthetic: Japanese zen — generous whitespace, calm palette, restrained type.
- * Palettes: banyan (default), sakura, sumi, koi. Selected via [data-banyan-theme]. */
+ * Aesthetic: calm and roomy — generous whitespace, a palette drawn from Vietnamese crafts, restrained type.
+ * Palettes: banyan (default), lotus, lacquer, lantern. Selected via [data-banyan-theme]. */
 
 :root {
   --banyan-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px rgba(0, 0, 0, .04);
@@ -23,7 +23,7 @@
      4. [data-theme="light"] forces light (manual toggle)
    ============================================================ */
 
-/* --- Banyan (default: washi + vermilion) --- */
+/* --- Banyan (default: dó paper + vermilion) --- */
 :root,
 [data-banyan-theme="banyan"] {
   --banyan-bg: #f4efe6;
@@ -56,8 +56,8 @@
   --banyan-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
 }
 
-/* --- Sakura (cherry blossom) --- */
-[data-banyan-theme="sakura"] {
+/* --- Lotus (pink lotus, sen) --- */
+[data-banyan-theme="lotus"] {
   --banyan-bg: #fff5f5;
   --banyan-surface: #ffffff;
   --banyan-text: #3a2228;
@@ -66,7 +66,7 @@
   --banyan-border: #f0d4dc;
 }
 @media (prefers-color-scheme: dark) {
-  [data-banyan-theme="sakura"]:not([data-theme="light"]) {
+  [data-banyan-theme="lotus"]:not([data-theme="light"]) {
     --banyan-bg: #1f1418;
     --banyan-surface: #2a1d22;
     --banyan-text: #f7e3e9;
@@ -76,7 +76,7 @@
     --banyan-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
   }
 }
-[data-banyan-theme="sakura"][data-theme="dark"] {
+[data-banyan-theme="lotus"][data-theme="dark"] {
   --banyan-bg: #1f1418;
   --banyan-surface: #2a1d22;
   --banyan-text: #f7e3e9;
@@ -86,8 +86,8 @@
   --banyan-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
 }
 
-/* --- Sumi (monochrome ink) --- */
-[data-banyan-theme="sumi"] {
+/* --- Lacquer (black lacquer, sơn mài) --- */
+[data-banyan-theme="lacquer"] {
   --banyan-bg: #fafafa;
   --banyan-surface: #ffffff;
   --banyan-text: #111111;
@@ -96,7 +96,7 @@
   --banyan-border: #e0e0e0;
 }
 @media (prefers-color-scheme: dark) {
-  [data-banyan-theme="sumi"]:not([data-theme="light"]) {
+  [data-banyan-theme="lacquer"]:not([data-theme="light"]) {
     --banyan-bg: #0d0d0d;
     --banyan-surface: #1a1a1a;
     --banyan-text: #f5f5f5;
@@ -106,7 +106,7 @@
     --banyan-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
   }
 }
-[data-banyan-theme="sumi"][data-theme="dark"] {
+[data-banyan-theme="lacquer"][data-theme="dark"] {
   --banyan-bg: #0d0d0d;
   --banyan-surface: #1a1a1a;
   --banyan-text: #f5f5f5;
@@ -116,8 +116,8 @@
   --banyan-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
 }
 
-/* --- Koi (orange + cream) --- */
-[data-banyan-theme="koi"] {
+/* --- Lantern (Hội An lantern: orange + cream) --- */
+[data-banyan-theme="lantern"] {
   --banyan-bg: #fef6e4;
   --banyan-surface: #ffffff;
   --banyan-text: #3a2620;
@@ -126,7 +126,7 @@
   --banyan-border: #f2dfb8;
 }
 @media (prefers-color-scheme: dark) {
-  [data-banyan-theme="koi"]:not([data-theme="light"]) {
+  [data-banyan-theme="lantern"]:not([data-theme="light"]) {
     --banyan-bg: #1c1410;
     --banyan-surface: #2a1f18;
     --banyan-text: #f7e2c4;
@@ -136,7 +136,7 @@
     --banyan-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
   }
 }
-[data-banyan-theme="koi"][data-theme="dark"] {
+[data-banyan-theme="lantern"][data-theme="dark"] {
   --banyan-bg: #1c1410;
   --banyan-surface: #2a1f18;
   --banyan-text: #f7e2c4;

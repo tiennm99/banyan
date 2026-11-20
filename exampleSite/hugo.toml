@@ -36,7 +36,7 @@ disableKinds = ["taxonomy", "term", "sitemap", "404"]
   bio = "Building tools, writing code, growing a quiet corner of the internet."
   # avatar omitted intentionally so the demo showcases the initials fallback
   # (the SVG circle uses the active palette's accent color)
-  colorTheme = "sakura"      # try "banyan" (default), "sakura", "sumi", "koi"
+  colorTheme = "lotus"      # try "banyan" (default), "lotus", "lacquer", "lantern"
   layout = "grid"            # try "stack" (default), "grid", "inline"
   themeToggle = true
   rss = true                 # opt-in RSS feed of [[params.links]]
@@ -45,7 +45,7 @@ disableKinds = ["taxonomy", "term", "sitemap", "404"]
   # ogImageUrl = "/og.png"   # optional 1200×630 image for social previews
 
   # Phase 1 (v0.5) opt-ins:
-  themeColor    = "#c93f63"  # matches the sakura palette accent; tints mobile browser chrome
+  themeColor    = "#c93f63"  # matches the lotus palette accent; tints mobile browser chrome
   favicon       = "/favicon.ico"  # opt-in in v0.5 — set to avoid console 404 on /favicon.ico request
   # robots      = "index,follow"  # default; set "noindex,nofollow" to hide from search engines
   # preloadAvatar = true     # default true; preloads params.avatar as LCP image (local paths only)

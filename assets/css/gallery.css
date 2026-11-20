@@ -50,8 +50,8 @@
   /* Explicit #fff: each palette's `--banyan-bg` varies enough vs accent that
      axe-core occasionally fails to resolve the var ladder and reports
      contrastRatio=null. Using a literal eliminates that ambiguity and lands
-     at ≥ 4.5:1 against every shipped accent (sakura 4.80:1, koi 4.81:1,
-     banyan 5.91:1, sumi 17.2:1). */
+     at ≥ 4.5:1 against every shipped accent (lotus 4.80:1, lantern 4.81:1,
+     banyan 5.91:1, lacquer 17.2:1). */
   color: #fff;
   border-color: var(--banyan-accent);
 }

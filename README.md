@@ -111,7 +111,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
 | `favicon` | string (URL) | `/favicon.ico` | Favicon path (`.ico` fallback). |
 | `faviconSvg` | string (URL) | — | Optional SVG favicon. Modern browsers prefer this when set. |
 | `appleTouchIcon` | string (URL) | — | 180×180 PNG for iOS home-screen / Safari pinned tabs. |
-| `colorTheme` | string | `banyan` | Palette: `banyan`, `sakura`, `sumi`, or `koi`. See [Color themes](#color-themes). |
+| `colorTheme` | string | `banyan` | Palette: `banyan`, `lotus`, `lacquer`, or `lantern`. See [Color themes](#color-themes). |
 | `layout` | string | `stack` | Link arrangement: `stack`, `grid`, or `inline`. See [Layout variants](#layout-variants). |
 | `themeToggle` | bool | `false` | Render a sun/moon button in the footer + load the toggle script. |
 | `rss` | bool | `false` | Render an RSS 2.0 feed of `[[params.links]]` at `/index.xml` and emit `<link rel="alternate">` in `<head>`. Requires removing `RSS` from `disableKinds`. |
@@ -156,10 +156,10 @@ Four built-in palettes, each with light + dark variants. Set `colorTheme` in `[p
 
 | Name | Vibe | Accent |
 |------|------|--------|
-| `banyan` *(default)* | washi paper + vermilion seal | `#8b3a2b` |
-| `sakura` | cherry blossom pink | `#c93f63` |
-| `sumi` | monochrome ink | `#1a1a1a` |
-| `koi` | orange + cream | `#bd4c1c` |
+| `banyan` *(default)* | dó paper + vermilion seal | `#8b3a2b` |
+| `lotus` | pink lotus (sen), the national flower | `#c93f63` |
+| `lacquer` | black lacquer (sơn mài) | `#1a1a1a` |
+| `lantern` | Hội An lantern orange + cream | `#bd4c1c` |
 
 Live preview: **[tiennm99.github.io/banyan/themes/](https://tiennm99.github.io/banyan/themes/)**.
 

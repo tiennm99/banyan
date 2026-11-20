@@ -2,7 +2,11 @@
 # Capture submission assets (images/screenshot.png + images/tn.png) from
 # the live demo. Run from repo root. Re-runnable; overwrites existing files.
 #
-# Requires: npx (installs Playwright on first run, ~170 MB chromium cache)
+# Requires: npx (runs agent-browser, https://github.com/vercel-labs/agent-browser)
+# Optional: AGENT_BROWSER_EXECUTABLE_PATH, a Chrome/Chromium to use instead of
+#           the one `agent-browser install` downloads (needed where that build
+#           cannot start, such as Ubuntu with AppArmor limits: point it at the
+#           system Chrome)
 # Optional: oxipng (lossless PNG compression — recommended)
 
 set -euo pipefail
@@ -10,29 +14,34 @@ set -euo pipefail
 URL="${BANYAN_DEMO_URL:-https://tiennm99.github.io/banyan/}"
 SCREENSHOT="images/screenshot.png"
 THUMBNAIL="images/tn.png"
+export AGENT_BROWSER_SESSION="banyan-screenshots"
 
 cd "$(dirname "$0")/.."
 
 mkdir -p images
 
-echo "==> Installing Playwright Chromium (cached after first run)"
-npx --yes playwright@1.50.0 install chromium
+ab() { npx --yes agent-browser "$@"; }
+
+if [ -z "${AGENT_BROWSER_EXECUTABLE_PATH:-}" ]; then
+  echo "==> Installing agent-browser's Chrome (cached after first run)"
+  ab install
+fi
+
+trap 'ab close >/dev/null 2>&1 || true' EXIT
+
+echo "==> Opening $URL"
+ab set viewport 1500 1000
+ab open "$URL"
+ab set media light
+ab wait 800
 
 echo "==> Capturing screenshot.png (1500x1000)"
-npx --yes playwright@1.50.0 screenshot \
-  --viewport-size=1500,1000 \
-  --browser=chromium \
-  --color-scheme=light \
-  --wait-for-timeout=800 \
-  "$URL" "$SCREENSHOT"
+ab screenshot "$SCREENSHOT"
 
 echo "==> Capturing tn.png (900x600)"
-npx --yes playwright@1.50.0 screenshot \
-  --viewport-size=900,600 \
-  --browser=chromium \
-  --color-scheme=light \
-  --wait-for-timeout=800 \
-  "$URL" "$THUMBNAIL"
+ab set viewport 900 600
+ab wait 500
+ab screenshot "$THUMBNAIL"
 
 if command -v oxipng >/dev/null 2>&1; then
   echo "==> Compressing with oxipng"
