@@ -1,7 +1,7 @@
 {{- /* Sun/moon theme toggle. Only loaded/rendered when site.Params.themeToggle = true.
        Sun shown in dark mode (target = light). Moon shown in light mode (target = dark). */ -}}
 <button type="button" class="theme-toggle"
-        data-bonsai-theme-toggle
+        data-banyan-theme-toggle
         aria-label="{{ with i18n "theme_toggle_label" }}{{ . }}{{ else }}Toggle light and dark theme{{ end }}"
         aria-pressed="false"
         title="{{ with i18n "theme_toggle_title" }}{{ . }}{{ else }}Toggle theme{{ end }}">

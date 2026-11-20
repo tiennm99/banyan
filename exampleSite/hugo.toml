@@ -1,9 +1,9 @@
 baseURL = "https://example.com/"
 languageCode = "en-us"
 title = "Tien Nguyen"
-theme = "bonsai"
+theme = "banyan"
 
-# Bonsai is a single-page bio theme — taxonomies/sitemaps off; RSS on for the
+# Banyan is a single-page bio theme — taxonomies/sitemaps off; RSS on for the
 # v0.4 demo (set params.rss = true and remove "RSS" from disableKinds).
 disableKinds = ["taxonomy", "term", "sitemap", "404"]
 
@@ -36,12 +36,12 @@ disableKinds = ["taxonomy", "term", "sitemap", "404"]
   bio = "Building tools, writing code, growing a quiet corner of the internet."
   # avatar omitted intentionally so the demo showcases the initials fallback
   # (the SVG circle uses the active palette's accent color)
-  colorTheme = "sakura"      # try "bonsai" (default), "sakura", "sumi", "koi"
+  colorTheme = "sakura"      # try "banyan" (default), "sakura", "sumi", "koi"
   layout = "grid"            # try "stack" (default), "grid", "inline"
   themeToggle = true
   rss = true                 # opt-in RSS feed of [[params.links]]
   jobTitle = "Software Engineer"
-  footerText = "© 2026 · made with bonsai"
+  footerText = "© 2026 · made with banyan"
   # ogImageUrl = "/og.png"   # optional 1200×630 image for social previews
 
   # Phase 1 (v0.5) opt-ins:

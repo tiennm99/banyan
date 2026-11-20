@@ -49,8 +49,8 @@
     {{- $initials = upper (printf "%s%s" $first $second) -}}
     {{- if not $initials -}}{{- $initials = "?" -}}{{- end -}}
   {{- end -}}
-  {{- $bg := site.Params.avatarBg | default "var(--bonsai-accent)" -}}
-  {{- $svgStyle := printf "color:var(--bonsai-bg);background:transparent" | safeCSS -}}
+  {{- $bg := site.Params.avatarBg | default "var(--banyan-accent)" -}}
+  {{- $svgStyle := printf "color:var(--banyan-bg);background:transparent" | safeCSS -}}
   {{- $circleStyle := printf "fill:%s" $bg | safeCSS -}}
   <svg class="bio__avatar bio__avatar--initials" viewBox="0 0 112 112" width="112" height="112"
        role="img" aria-label="{{ $name }}"

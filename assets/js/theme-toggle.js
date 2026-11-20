@@ -3,14 +3,14 @@
 // Note: a sibling inline script in <head> applies the saved value pre-paint to avoid FOUC.
 // We re-read here as a safety net (and the inline script may have failed under strict CSP).
 (function () {
-  const KEY = 'bonsai-theme';
+  const KEY = 'banyan-theme';
   const root = document.documentElement;
   if (root.dataset.theme !== 'light' && root.dataset.theme !== 'dark') {
     const saved = localStorage.getItem(KEY);
     if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
   }
 
-  const btn = document.querySelector('[data-bonsai-theme-toggle]');
+  const btn = document.querySelector('[data-banyan-theme-toggle]');
   if (!btn) return;
 
   function syncPressed() {

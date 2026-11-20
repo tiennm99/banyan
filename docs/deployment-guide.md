@@ -1,8 +1,8 @@
 # Deployment guide
 
-Bonsai is a Hugo theme — the built `public/` directory is plain static files. You can host it anywhere. This guide covers four common targets and the security/cache headers that move Lighthouse Best-Practices and Performance scores into the ≥90 range.
+Banyan is a Hugo theme — the built `public/` directory is plain static files. You can host it anywhere. This guide covers four common targets and the security/cache headers that move Lighthouse Best-Practices and Performance scores into the ≥90 range.
 
-## What Bonsai ships
+## What Banyan ships
 
 Two example header files live under `exampleSite/`:
 
@@ -23,9 +23,9 @@ Both apply identical policies; pick the one matching your host.
 | `Cache-Control: public, max-age=31536000, immutable` (on `/css/*`, `/js/*`, `/icons/*`, `/images/*`) | Performance (repeat visits) | 1-year cache on fingerprinted assets. |
 | `Cache-Control: public, max-age=3600, must-revalidate` (on `/`, `/index.html`) | Performance | 1-hour cache on HTML; lets you push content updates fast. |
 
-## CSP and Bonsai's defaults
+## CSP and Banyan's defaults
 
-The shipped CSP is permissive enough to support every opt-in Bonsai feature:
+The shipped CSP is permissive enough to support every opt-in Banyan feature:
 
 - `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com` — `'unsafe-inline'` is required by the theme-toggle FOUC script and the GA4 init snippet. `googletagmanager.com` lets the GA4 loader fetch `gtag.js`.
 - `style-src 'self' 'unsafe-inline'` — required by inline `style=` attrs on the SVG initials avatar.
@@ -80,13 +80,13 @@ export default {
 
 ## Analytics & consent
 
-Bonsai's optional GA4 integration sets cookies. In jurisdictions with strict privacy law you must obtain user consent **before** loading `gtag.js`:
+Banyan's optional GA4 integration sets cookies. In jurisdictions with strict privacy law you must obtain user consent **before** loading `gtag.js`:
 
 - **GDPR (EU):** Explicit consent required for non-essential cookies.
 - **UK PECR:** Same.
 - **California CPRA:** Disclosure + opt-out required.
 
-Bonsai does **not** ship a consent banner. Pair with a consent management platform (Klaro!, Cookiebot, OneTrust) or skip GA4 entirely.
+Banyan does **not** ship a consent banner. Pair with a consent management platform (Klaro!, Cookiebot, OneTrust) or skip GA4 entirely.
 
 If you don't enable `[params.analytics]`, zero analytics scripts ship — no consent banner needed.
 

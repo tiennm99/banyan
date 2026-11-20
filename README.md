@@ -1,16 +1,16 @@
-# Bonsai
+# Banyan
 
-[![build](https://github.com/tiennm99/bonsai/actions/workflows/build.yml/badge.svg)](https://github.com/tiennm99/bonsai/actions/workflows/build.yml)
-[![license](https://img.shields.io/github/license/tiennm99/bonsai)](LICENSE)
+[![build](https://github.com/tiennm99/banyan/actions/workflows/build.yml/badge.svg)](https://github.com/tiennm99/banyan/actions/workflows/build.yml)
+[![license](https://img.shields.io/github/license/tiennm99/banyan)](LICENSE)
 [![Hugo](https://img.shields.io/badge/hugo-%E2%89%A50.140-ff4088?logo=hugo)](https://gohugo.io)
 
-A minimalist Hugo theme for link-in-bio pages, inspired by [Linktree](https://linktr.ee) and the Japanese art of [bonsai](https://en.wikipedia.org/wiki/Bonsai) — *small, curated, intentional*.
+A minimalist Hugo theme for link-in-bio pages, inspired by [Linktree](https://linktr.ee) and the [banyan](https://en.wikipedia.org/wiki/Banyan) tree of Vietnam: *one root, many branches*.
 
-**→ [Live demo](https://tiennm99.github.io/bonsai/)** · **[Icon gallery](https://tiennm99.github.io/bonsai/icons/)** · **[Layout variants](https://tiennm99.github.io/bonsai/variants/)** · **[Color themes](https://tiennm99.github.io/bonsai/themes/)**
+**→ [Live demo](https://tiennm99.github.io/banyan/)** · **[Icon gallery](https://tiennm99.github.io/banyan/icons/)** · **[Layout variants](https://tiennm99.github.io/banyan/variants/)** · **[Color themes](https://tiennm99.github.io/banyan/themes/)**
 
-> 盆栽 (bonsai): "tray planting" — the art of growing miniature trees through patient, deliberate cultivation. Every branch placed with care.
+> Cây đa (banyan): the old tree at the entrance of a Vietnamese village, where people meet. Its hanging roots grow down into new trunks, so one tree becomes a whole canopy.
 
-Bonsai treats your bio page the same way: a quiet, well-pruned page that surfaces only what matters — your name, who you are, and where people can find you.
+Banyan treats your bio page the same way: one root page that everything else branches from — your name, who you are, and where people can find you.
 
 ## Features
 
@@ -45,20 +45,20 @@ Bonsai treats your bio page the same way: a quiet, well-pruned page that surface
 ### As a Git submodule (simplest)
 
 ```bash
-git submodule add https://github.com/tiennm99/bonsai.git themes/bonsai
+git submodule add https://github.com/tiennm99/banyan.git themes/banyan
 ```
 
 Add to `hugo.toml`:
 
 ```toml
-theme = "bonsai"
+theme = "banyan"
 ```
 
 ### As a Hugo Module
 
 ```bash
 hugo mod init github.com/<you>/<your-site>
-hugo mod get github.com/tiennm99/bonsai
+hugo mod get github.com/tiennm99/banyan
 ```
 
 Add to `hugo.toml`:
@@ -66,7 +66,7 @@ Add to `hugo.toml`:
 ```toml
 [module]
   [[module.imports]]
-    path = "github.com/tiennm99/bonsai"
+    path = "github.com/tiennm99/banyan"
 ```
 
 ## Configuration
@@ -76,7 +76,7 @@ Minimal `hugo.toml`:
 ```toml
 baseURL = "https://example.com/"
 title   = "Your Name"
-theme   = "bonsai"
+theme   = "banyan"
 
 # Single-page bio — disable everything Hugo doesn't need.
 disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
@@ -107,11 +107,11 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
 | `bio` | string (markdown) | — | Short bio paragraph. Markdown supported. |
 | `avatar` | string (URL) | — | Avatar image path. If unset, theme renders an SVG circle with auto-derived initials. |
 | `avatarInitials` | string | first letters of `name` | Override the initials when no `avatar` is set. |
-| `avatarBg` | string (CSS color) | `var(--bonsai-accent)` | Background color of the initials circle. |
+| `avatarBg` | string (CSS color) | `var(--banyan-accent)` | Background color of the initials circle. |
 | `favicon` | string (URL) | `/favicon.ico` | Favicon path (`.ico` fallback). |
 | `faviconSvg` | string (URL) | — | Optional SVG favicon. Modern browsers prefer this when set. |
 | `appleTouchIcon` | string (URL) | — | 180×180 PNG for iOS home-screen / Safari pinned tabs. |
-| `colorTheme` | string | `bonsai` | Palette: `bonsai`, `sakura`, `sumi`, or `koi`. See [Color themes](#color-themes). |
+| `colorTheme` | string | `banyan` | Palette: `banyan`, `sakura`, `sumi`, or `koi`. See [Color themes](#color-themes). |
 | `layout` | string | `stack` | Link arrangement: `stack`, `grid`, or `inline`. See [Layout variants](#layout-variants). |
 | `themeToggle` | bool | `false` | Render a sun/moon button in the footer + load the toggle script. |
 | `rss` | bool | `false` | Render an RSS 2.0 feed of `[[params.links]]` at `/index.xml` and emit `<link rel="alternate">` in `<head>`. Requires removing `RSS` from `disableKinds`. |
@@ -156,12 +156,12 @@ Four built-in palettes, each with light + dark variants. Set `colorTheme` in `[p
 
 | Name | Vibe | Accent |
 |------|------|--------|
-| `bonsai` *(default)* | washi paper + vermilion seal | `#8b3a2b` |
+| `banyan` *(default)* | washi paper + vermilion seal | `#8b3a2b` |
 | `sakura` | cherry blossom pink | `#c93f63` |
 | `sumi` | monochrome ink | `#1a1a1a` |
 | `koi` | orange + cream | `#bd4c1c` |
 
-Live preview: **[tiennm99.github.io/bonsai/themes/](https://tiennm99.github.io/bonsai/themes/)**.
+Live preview: **[tiennm99.github.io/banyan/themes/](https://tiennm99.github.io/banyan/themes/)**.
 
 ## Layout variants
 
@@ -173,7 +173,7 @@ Three arrangements for `[[params.links]]`. Pick one via `layout` in `[params]`:
 | `grid` | Two-column responsive grid (collapses to one column under 480 px) | 6–12 links; balances density and tap-target size. |
 | `inline` | Icon-only horizontal row | Lots of accounts, short page; titles stay in DOM for screen readers. |
 
-Live preview: **[tiennm99.github.io/bonsai/variants/](https://tiennm99.github.io/bonsai/variants/)**.
+Live preview: **[tiennm99.github.io/banyan/variants/](https://tiennm99.github.io/banyan/variants/)**.
 
 ## RSS feed (opt-in)
 
@@ -233,7 +233,7 @@ Off by default. To enable Google Analytics 4 click tracking and UTM injection on
   # utmCampaign = "summer-launch"
 ```
 
-> ⚠️ **GA4 sets cookies.** Sites serving EU / UK / California visitors require explicit user consent before loading `gtag.js`. Bonsai does not ship a consent banner — pair with a consent management platform (Klaro!, Cookiebot, OneTrust) or skip GA4 entirely. See [`docs/deployment-guide.md`](./docs/deployment-guide.md#analytics--consent).
+> ⚠️ **GA4 sets cookies.** Sites serving EU / UK / California visitors require explicit user consent before loading `gtag.js`. Banyan does not ship a consent banner — pair with a consent management platform (Klaro!, Cookiebot, OneTrust) or skip GA4 entirely. See [`docs/deployment-guide.md`](./docs/deployment-guide.md#analytics--consent).
 
 ## i18n
 
@@ -322,15 +322,15 @@ Missing keys fall back to `en`. User content (`name`, `tagline`, `bio`, link `ti
 
 </details>
 
-Icons are vendored at build time — no CDN fetch at runtime. Live gallery: **[tiennm99.github.io/bonsai/icons/](https://tiennm99.github.io/bonsai/icons/)**.
+Icons are vendored at build time — no CDN fetch at runtime. Live gallery: **[tiennm99.github.io/banyan/icons/](https://tiennm99.github.io/banyan/icons/)**.
 
 To refresh or add icons, edit `scripts/sync-icons.sh` and `data/icons.yaml`, then re-run the script. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Development
 
 ```bash
-git clone https://github.com/tiennm99/bonsai.git
-cd bonsai/exampleSite
+git clone https://github.com/tiennm99/banyan.git
+cd banyan/exampleSite
 hugo server --themesDir ../.. --bind 0.0.0.0
 ```
 

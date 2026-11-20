@@ -4,6 +4,18 @@ All notable changes to this project are documented here. Format follows [Keep a 
 
 ## [Unreleased]
 
+## [0.6.0] — 2026-11-20
+
+The theme is renamed from **Bonsai** to **Banyan** and moves to its own repository, `github.com/tiennm99/banyan`.
+
+### Changed
+- **Renamed to Banyan**, after the banyan tree (cây đa) of Vietnam. Update your site: the theme name or module path becomes `banyan`, and `colorTheme = "bonsai"` becomes `colorTheme = "banyan"` (still the default).
+- The stylesheet is now `css/banyan.css`, the root class `.banyan`, and the data attributes `data-banyan-theme`, `data-banyan-theme-toggle` and `data-banyan-share`. Sites that override these in custom CSS must rename them.
+- The saved light/dark choice uses the `localStorage` key `banyan-theme`, so visitors' saved choice resets once.
+
+### Added
+- The theme is a Hugo module (`go.mod`) and declares `module.hugoVersion.min = "0.140.0"` in its own `hugo.toml`.
+
 ## [0.5.0] — 2026-05-15
 
 Linktree-parity + Lighthouse release. Closes #7 (auto-OG, infra-only) and #9 (multi-section bio). All additions are strictly opt-in or transparent; v0.4 sites upgrade with no config edits.

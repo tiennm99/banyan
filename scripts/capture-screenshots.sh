@@ -7,7 +7,7 @@
 
 set -euo pipefail
 
-URL="${BONSAI_DEMO_URL:-https://tiennm99.github.io/bonsai/}"
+URL="${BANYAN_DEMO_URL:-https://tiennm99.github.io/banyan/}"
 SCREENSHOT="images/screenshot.png"
 THUMBNAIL="images/tn.png"
 

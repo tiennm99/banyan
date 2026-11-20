@@ -1,12 +1,12 @@
-# Contributing to Bonsai
+# Contributing to Banyan
 
-Thanks for your interest. Bonsai is intentionally small — every change should make it simpler, faster, or more useful, never bigger for its own sake.
+Thanks for your interest. Banyan is intentionally small — every change should make it simpler, faster, or more useful, never bigger for its own sake.
 
 ## Local development
 
 ```bash
-git clone https://github.com/tiennm99/bonsai.git
-cd bonsai/exampleSite
+git clone https://github.com/tiennm99/banyan.git
+cd banyan/exampleSite
 hugo server --themesDir ../.. --bind 0.0.0.0
 ```
 
@@ -52,4 +52,4 @@ Include: Hugo version (`hugo version`), theme version/commit, minimal reproducti
 
 ## Philosophy
 
-YAGNI · KISS · DRY. If a feature would be useful for *some* sites, it doesn't belong here unless it's useful for *most* link-in-bio sites. The strength of Bonsai is what it leaves out.
+YAGNI · KISS · DRY. If a feature would be useful for *some* sites, it doesn't belong here unless it's useful for *most* link-in-bio sites. The strength of Banyan is what it leaves out.

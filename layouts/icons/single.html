@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="icon-gallery">
   <h1>{{ .Title }}</h1>
-  <p>{{ .Description | default "All available icons in the Bonsai theme." }}</p>
+  <p>{{ .Description | default "All available icons in the Banyan theme." }}</p>
   <div style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.5rem;">
     {{- range $name, $entry := site.Data.icons }}
     <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:80px;">

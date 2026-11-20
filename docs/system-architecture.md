@@ -1,11 +1,11 @@
 # System architecture
 
-Bonsai is a [Hugo](https://gohugo.io) theme — a directory of templates, partials, CSS, JS, and data files that Hugo reads when building a user's site. There is no runtime: every page, JSON-LD block, OG meta tag, QR PNG, AVIF/WebP image variant, vCard, RSS feed, and Lighthouse-relevant output is produced at `hugo build` time.
+Banyan is a [Hugo](https://gohugo.io) theme — a directory of templates, partials, CSS, JS, and data files that Hugo reads when building a user's site. There is no runtime: every page, JSON-LD block, OG meta tag, QR PNG, AVIF/WebP image variant, vCard, RSS feed, and Lighthouse-relevant output is produced at `hugo build` time.
 
 ## Directory layout
 
 ```
-bonsai/
+banyan/
 ├── theme.toml                  # Hugo theme metadata (name, min_version, license)
 ├── data/icons.yaml             # Public icon name → {family, slug} manifest
 ├── i18n/                       # Localized UI strings (en, vi shipped; extensible)
@@ -48,11 +48,11 @@ bonsai/
 ### 1. CSS / JS pipeline
 
 ```
-assets/css/bonsai.css
+assets/css/banyan.css
    └─ resources.Get
         └─ resources.Minify        (strip whitespace, comments)
              └─ resources.Fingerprint "sha384"
-                  └─ /css/bonsai.min.<sha>.css  +  integrity="sha384-..."
+                  └─ /css/banyan.min.<sha>.css  +  integrity="sha384-..."
 ```
 
 Same shape for `gallery.css`, `theme-toggle.js`, `share.js`. The fingerprinted output lets hosts apply `Cache-Control: public, max-age=31536000, immutable` to `/css/*` and `/js/*` safely — any content change produces a new filename hash.
@@ -117,10 +117,10 @@ Every user-facing string the theme renders is sourced from `i18n/<lang>.toml`. H
 | Performance | Avatar preload (when local) | `partials/head.html` |
 | Performance | Modern image formats (AVIF/WebP/JPEG `<picture>`) | `partials/avatar.html` |
 | Performance | Fingerprinted CSS / JS with SRI | `partials/head.html` |
-| Performance | Zero web fonts, system stack | `assets/css/bonsai.css` |
+| Performance | Zero web fonts, system stack | `assets/css/banyan.css` |
 | A11y | Skip-link, `<nav aria-label>`, semantic landmarks | `baseof.html`, `bio-card.html` |
-| A11y | Tap targets ≥ 48×48 on inline layout | `assets/css/bonsai.css` |
-| A11y | `prefers-reduced-motion` honored | `assets/css/bonsai.css` |
+| A11y | Tap targets ≥ 48×48 on inline layout | `assets/css/banyan.css` |
+| A11y | `prefers-reduced-motion` honored | `assets/css/banyan.css` |
 | A11y | WCAG-AA accent colors | palette CSS |
 | Best-Practices | Security headers (CSP, X-Frame, Referrer-Policy, Permissions-Policy) | `exampleSite/static/_headers` + `vercel.json` |
 | Best-Practices | `rel="noopener noreferrer"` on external links | `link-button.html` |
@@ -130,7 +130,7 @@ Every user-facing string the theme renders is sourced from `i18n/<lang>.toml`. H
 | SEO | Hreflang alternates (multi-lang sites) | `partials/head.html` |
 | SEO | JSON-LD Person (always) + optional WebSite | `schema-person.html`, `schema-website.html` |
 | SEO | `<meta name="robots">` configurable | `partials/head.html` |
-| SEO | Tap-target sizing | `assets/css/bonsai.css` |
+| SEO | Tap-target sizing | `assets/css/banyan.css` |
 
 ## Backward-compatibility contract
 

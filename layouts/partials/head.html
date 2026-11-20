@@ -7,7 +7,7 @@
        2. params.ogImageUrl set → use it (1200×630 → summary_large_image).
        3. params.ogAuto = true AND ogAutoBase + ogAutoFont supplied → auto-generate
           via Hugo's images.Filter + images.Text overlay at build time.
-          (Bonsai v0.5 ships infra-only; user supplies the base PNG + TTF font.)
+          (Banyan v0.5 ships infra-only; user supplies the base PNG + TTF font.)
        4. else fall back to params.avatar (square → summary card).            */ -}}
 {{- $ogImageEnabled := site.Params.ogImage | default true -}}
 {{- $ogImageUrl := "" -}}
@@ -29,7 +29,7 @@
       {{- $ogImageUrl = $generated.Permalink -}}
       {{- $twitterCard = "summary_large_image" -}}
     {{- else if $avatar -}}
-      {{- warnf "bonsai: params.ogAuto enabled but ogAutoBase/ogAutoFont resources not found; falling back to avatar" -}}
+      {{- warnf "banyan: params.ogAuto enabled but ogAutoBase/ogAutoFont resources not found; falling back to avatar" -}}
       {{- $ogImageUrl = $avatar | strings.TrimPrefix "/" | absURL -}}
     {{- end -}}
   {{- else if $avatar -}}
@@ -92,7 +92,7 @@
 {{- /* Fingerprinted + minified CSS via Hugo's resource pipeline.
        integrity= attribute lets browsers / CSP `style-src 'self' 'sha384-...'`
        validate the file. */ -}}
-{{- $css := resources.Get "css/bonsai.css" | resources.Minify | resources.Fingerprint "sha384" }}
+{{- $css := resources.Get "css/banyan.css" | resources.Minify | resources.Fingerprint "sha384" }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" />
 {{- if site.Params.rss }}
 <link rel="alternate" type="application/rss+xml" title="{{ site.Params.name | default site.Title }}" href="{{ `index.xml` | absURL }}" />
@@ -100,7 +100,7 @@
 {{- if site.Params.themeToggle }}
 {{- /* Inline blocking script (no FOUC): apply saved theme before first paint.
        Tiny (~140B) — meets the <3KB CSS / minimal-JS budget. */ -}}
-<script>(function(){try{var t=localStorage.getItem('bonsai-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('banyan-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
 <noscript><style>.theme-toggle{display:none!important}</style></noscript>
 {{- $themeJs := resources.Get "js/theme-toggle.js" | resources.Minify | resources.Fingerprint "sha384" }}
 <script defer src="{{ $themeJs.RelPermalink }}" integrity="{{ $themeJs.Data.Integrity }}" crossorigin="anonymous"></script>

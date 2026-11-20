@@ -20,7 +20,7 @@ Never both. If a partial needs context, pass it explicitly.
 ## CSS conventions
 
 - **BEM-ish naming**: `.block`, `.block__elem`, `.block--modifier`. Examples: `.bio`, `.bio__avatar`, `.bio__avatar--initials`, `.link`, `.link__icon`, `.link--featured`.
-- **CSS custom properties** for every user-tunable value: colors per palette, layout sizes, fonts. Live in `:root` (layout) or `[data-bonsai-theme="…"]` blocks (color).
+- **CSS custom properties** for every user-tunable value: colors per palette, layout sizes, fonts. Live in `:root` (layout) or `[data-banyan-theme="…"]` blocks (color).
 - **No `!important`** except the `noscript` rule hiding `.theme-toggle` when JS is disabled.
 - **No deeply nested selectors** — keep specificity at ≤ (0,2,0). The single attribute selector `svg[stroke="currentColor"]` is the only exception.
 - **No web fonts** — system font stacks only (`ui-sans-serif`, `system-ui`, `ui-serif`, `Georgia`).

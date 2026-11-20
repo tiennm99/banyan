@@ -6,7 +6,7 @@
 {{- $layout := site.Params.layout | default "stack" -}}
 {{- $defaultLabel := i18n "nav_links_label" | default "Links" -}}
 {{- if and $sections $links -}}
-  {{- warnf "bonsai: both params.sections and params.links set; sections win, flat links ignored" -}}
+  {{- warnf "banyan: both params.sections and params.links set; sections win, flat links ignored" -}}
 {{- end -}}
 
 <article class="bio">

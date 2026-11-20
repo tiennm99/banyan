@@ -6,7 +6,7 @@
 {{- $label := .label | default (i18n "nav_links_label" | default "Links") -}}
 {{- $validLayouts := slice "stack" "grid" "inline" -}}
 {{- if not (in $validLayouts $layout) -}}
-  {{- warnf "bonsai: unknown layout %q (expected stack|grid|inline), falling back to 'stack'" $layout -}}
+  {{- warnf "banyan: unknown layout %q (expected stack|grid|inline), falling back to 'stack'" $layout -}}
   {{- $layout = "stack" -}}
 {{- end -}}
 {{- /* Resolve analytics once and pass into each link-button so the partial reads

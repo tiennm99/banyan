@@ -1,8 +1,8 @@
-// Bonsai page-share button.
+// Banyan page-share button.
 // Tries navigator.share first; falls back to clipboard.writeText with a toast.
 // Loaded only when params.share = true.
 (function () {
-  var btn = document.querySelector('[data-bonsai-share]');
+  var btn = document.querySelector('[data-banyan-share]');
   if (!btn) return;
   var toast = document.querySelector('.bio__share-toast');
   var toastTimer;
