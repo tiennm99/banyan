@@ -10,8 +10,8 @@ disableKinds = ["taxonomy", "term", "sitemap", "404"]
 # Keep the capital letters of the Markdown output's README.md file name.
 disablePathToLower = true
 
-# Register VCard + Manifest output formats so layouts/_default/vcard.vcf and
-# layouts/_default/manifest.webmanifest get rendered when their params are on.
+# Register the vcard + manifest output formats so layouts/home.vcard.vcf and
+# layouts/home.manifest.webmanifest get rendered when their params are on.
 [mediaTypes."text/vcard"]
   suffixes = ["vcf"]
 
@@ -19,21 +19,21 @@ disablePathToLower = true
   suffixes = ["webmanifest"]
 
 [outputs]
-  home = ["HTML", "RSS", "Manifest", "Markdown"]
+  home = ["html", "rss", "manifest", "markdown"]
 
-[outputFormats.VCard]
+[outputFormats.vcard]
   mediaType      = "text/vcard"
   baseName       = "vcard"
   isPlainText    = true
   notAlternative = true
 
-# Markdown version of the page at /README.md (layouts/index.markdown.md).
-[outputFormats.Markdown]
+# Markdown version of the page at /README.md (layouts/home.markdown.md).
+[outputFormats.markdown]
   mediaType   = "text/markdown"
   baseName    = "README"
   isPlainText = true
 
-[outputFormats.Manifest]
+[outputFormats.manifest]
   mediaType      = "application/manifest+json"
   baseName       = "manifest"
   isPlainText    = true
@@ -81,8 +81,8 @@ disablePathToLower = true
 
 # Register VCard output format on home page (only needed when vcard = true)
 # [outputs]
-#   home = ["HTML", "RSS", "VCard"]
-# [outputFormats.VCard]
+#   home = ["html", "rss", "vcard"]
+# [outputFormats.vcard]
 #   mediaType    = "text/vcard"
 #   baseName     = "vcard"
 #   isPlainText  = true

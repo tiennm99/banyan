@@ -205,15 +205,15 @@ Add to `hugo.toml`:
   suffixes = ["webmanifest"]
 
 [outputs]
-  home = ["HTML", "RSS", "Manifest"]   # add "VCard" if params.vcard = true
+  home = ["html", "rss", "manifest"]   # add "vcard" if params.vcard = true
 
-[outputFormats.VCard]
+[outputFormats.vcard]
   mediaType      = "text/vcard"
   baseName       = "vcard"
   isPlainText    = true
   notAlternative = true
 
-[outputFormats.Manifest]
+[outputFormats.manifest]
   mediaType      = "application/manifest+json"
   baseName       = "manifest"
   isPlainText    = true
@@ -233,9 +233,9 @@ copy of the page. Register the format and add it to the home outputs:
 disablePathToLower = true   # keeps the file name README.md, not readme.md
 
 [outputs]
-  home = ["HTML", "Markdown"]
+  home = ["html", "markdown"]
 
-[outputFormats.Markdown]
+[outputFormats.markdown]
   mediaType   = "text/markdown"
   baseName    = "README"
   isPlainText = true

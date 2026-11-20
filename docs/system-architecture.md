@@ -14,30 +14,30 @@ banyan/
 │   ├── js/                     # Optional scripts (theme-toggle, share)
 │   └── icons/                  # Vendored SVG icons (Simple Icons + Lucide)
 ├── layouts/
-│   ├── _default/baseof.html    # HTML5 skeleton
-│   ├── index.html              # Home page entry (calls bio-card partial)
-│   ├── index.rss.xml           # RSS 2.0 feed of links/sections
-│   ├── index.markdown.md       # Markdown version of the page (opt-in)
-│   ├── _default/vcard.vcf      # vCard output template (opt-in)
-│   ├── _default/manifest.webmanifest  # PWA manifest (opt-in)
-│   └── partials/
-│       ├── head.html           # All <head> content
-│       ├── bio-card.html       # Main bio card with sections/links branching
-│       ├── link-button.html    # Individual link (with thumbnail / featured / scheduled / rel / note)
-│       ├── link-group.html     # Renders one <nav> of links (used by flat + sectioned modes)
-│       ├── link-visible.html   # Returns whether a link is inside its startDate/endDate window
-│       ├── icon.html           # Inline SVG icon lookup (data/icons.yaml → assets/icons/)
-│       ├── avatar.html         # Avatar: <picture> for local, <img> for URL, SVG initials fallback
-│       ├── share-button.html   # Opt-in Web Share button
-│       ├── qr-block.html       # Opt-in QR code block (images.QR)
-│       ├── analytics-loader.html  # Opt-in GA4 loader + click listener
-│       ├── schema-person.html  # JSON-LD ProfilePage > Person
-│       ├── schema-website.html # Opt-in JSON-LD WebSite
-│       ├── theme-toggle-button.html
-│       └── footer.html
-│   ├── themes/single.html      # Demo: color-palette gallery
-│   ├── variants/single.html    # Demo: layout-variant gallery
-│   └── icons/single.html       # Demo: icon gallery
+│   ├── baseof.html             # HTML5 skeleton
+│   ├── home.html               # Home page entry (calls bio-card partial)
+│   ├── home.rss.xml            # RSS 2.0 feed of links/sections
+│   ├── home.markdown.md        # Markdown version of the page (opt-in)
+│   ├── home.vcard.vcf          # vCard output template (opt-in)
+│   ├── home.manifest.webmanifest  # PWA manifest (opt-in)
+│   ├── _partials/
+│   │   ├── head.html           # All <head> content
+│   │   ├── bio-card.html       # Main bio card with sections/links branching
+│   │   ├── link-button.html    # Individual link (with thumbnail / featured / scheduled / rel / note)
+│   │   ├── link-group.html     # Renders one <nav> of links (used by flat + sectioned modes)
+│   │   ├── link-visible.html   # Returns whether a link is inside its startDate/endDate window
+│   │   ├── icon.html           # Inline SVG icon lookup (data/icons.yaml → assets/icons/)
+│   │   ├── avatar.html         # Avatar: <picture> for local, <img> for URL, SVG initials fallback
+│   │   ├── share-button.html   # Opt-in Web Share button
+│   │   ├── qr-block.html       # Opt-in QR code block (images.QR)
+│   │   ├── analytics-loader.html  # Opt-in GA4 loader + click listener
+│   │   ├── schema-person.html  # JSON-LD ProfilePage > Person
+│   │   ├── schema-website.html # Opt-in JSON-LD WebSite
+│   │   ├── theme-toggle-button.html
+│   │   └── footer.html
+│   ├── themes/page.html        # Demo: color-palette gallery
+│   ├── variants/page.html      # Demo: layout-variant gallery
+│   └── icons/page.html         # Demo: icon gallery
 └── exampleSite/                # Self-contained demo + reference config
     ├── hugo.toml               # Showcases every opt-in param
     ├── static/_headers         # Netlify / Cloudflare Pages header file
@@ -115,10 +115,10 @@ Every user-facing string the theme renders is sourced from `i18n/<lang>.toml`. H
 
 | Category | Signal | Source |
 |----------|--------|--------|
-| Performance | Avatar dims + `fetchpriority="high"` + `decoding="async"` | `partials/avatar.html` |
-| Performance | Avatar preload (when local) | `partials/head.html` |
-| Performance | Modern image formats (AVIF/WebP/JPEG `<picture>`) | `partials/avatar.html` |
-| Performance | Fingerprinted CSS / JS with SRI | `partials/head.html` |
+| Performance | Avatar dims + `fetchpriority="high"` + `decoding="async"` | `_partials/avatar.html` |
+| Performance | Avatar preload (when local) | `_partials/head.html` |
+| Performance | Modern image formats (AVIF/WebP/JPEG `<picture>`) | `_partials/avatar.html` |
+| Performance | Fingerprinted CSS / JS with SRI | `_partials/head.html` |
 | Performance | Zero web fonts, system stack | `assets/css/banyan.css` |
 | A11y | Skip-link, `<nav aria-label>`, semantic landmarks | `baseof.html`, `bio-card.html` |
 | A11y | Tap targets ≥ 48×48 on inline layout | `assets/css/banyan.css` |
@@ -126,17 +126,17 @@ Every user-facing string the theme renders is sourced from `i18n/<lang>.toml`. H
 | A11y | WCAG-AA accent colors | palette CSS |
 | Best-Practices | Security headers (CSP, X-Frame, Referrer-Policy, Permissions-Policy) | `exampleSite/static/_headers` + `vercel.json` |
 | Best-Practices | `rel="noopener noreferrer"` on external links | `link-button.html` |
-| Best-Practices | SRI `integrity=` on assets | `partials/head.html` |
-| SEO | `<link rel="canonical">` | `partials/head.html` |
-| SEO | `<meta property="og:url">`, `og:type`, `og:title`, `og:description`, `og:image` | `partials/head.html` |
-| SEO | Hreflang alternates (multi-lang sites) | `partials/head.html` |
+| Best-Practices | SRI `integrity=` on assets | `_partials/head.html` |
+| SEO | `<link rel="canonical">` | `_partials/head.html` |
+| SEO | `<meta property="og:url">`, `og:type`, `og:title`, `og:description`, `og:image` | `_partials/head.html` |
+| SEO | Hreflang alternates (multi-lang sites) | `_partials/head.html` |
 | SEO | JSON-LD Person (always) + optional WebSite | `schema-person.html`, `schema-website.html` |
-| SEO | `<meta name="robots">` configurable | `partials/head.html` |
+| SEO | `<meta name="robots">` configurable | `_partials/head.html` |
 | SEO | Tap-target sizing | `assets/css/banyan.css` |
 
 ## Backward-compatibility contract
 
 - Every new param added in v0.5 defaults to off OR has a safe default that preserves v0.4 behavior.
 - `[[params.links]]` continues to work unchanged when `[[params.sections]]` is absent.
-- Avatar URL paths from `static/` still work via the fallback branch in `partials/avatar.html`.
+- Avatar URL paths from `static/` still work via the fallback branch in `_partials/avatar.html`.
 - The CSS/JS file move from `static/` to `assets/` is invisible to user sites — the fingerprinted output is served at `/css/*` and `/js/*`.

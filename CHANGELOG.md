@@ -4,6 +4,12 @@ All notable changes to this project are documented here. Format follows [Keep a 
 
 ## [Unreleased]
 
+## [0.9.0] — 2026-11-20
+
+### Changed
+- **Layouts follow Hugo's new template system.** `_default/` is gone (`baseof.html` and the vCard and manifest templates sit at the `layouts/` root), `partials/` is now `_partials/`, the home templates are `home.html`, `home.rss.xml`, `home.markdown.md`, `home.vcard.vcf` and `home.manifest.webmanifest`, and the demo layouts are `page.html`. Sites that override a theme template must move their copy to the new path. The built output is unchanged.
+- The docs and `exampleSite` name output formats in lowercase (`html`, `rss`, `vcard`, `manifest`, `markdown`), as Hugo recommends.
+
 ## [0.8.0] — 2026-11-20
 
 ### Changed

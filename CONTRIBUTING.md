@@ -41,7 +41,7 @@ The icon system is data-driven — adding one means three small edits.
 
 ## Style
 
-- HTML & CSS: 2-space indent. Keep `partials/` files under 30 lines where possible.
+- HTML & CSS: 2-space indent. Keep `_partials/` files under 30 lines where possible.
 - Hugo templates: prefer `{{- ... -}}` to suppress whitespace; use `partials` for reuse.
 - CSS: BEM-ish naming (`.bio__name`, `.link__icon`); CSS custom properties for theming.
 - No build steps for end users — vendored assets only. If you reach for `npm install`, reconsider.

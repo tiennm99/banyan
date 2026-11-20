@@ -6,7 +6,7 @@ How code in this theme is written and why. The goal is predictability — both f
 
 - **Kebab-case** for all filenames: `link-button.html`, `theme-toggle.js`, `schema-website.html`.
 - Long descriptive names beat short cryptic ones — `analytics-loader.html` is better than `al.html`.
-- Hugo partials living under `layouts/partials/` use the `.html` extension even when they emit JSON-LD or `<script>` blocks — Hugo doesn't care about extension, but consistency helps grep.
+- Hugo partials living under `layouts/_partials/` use the `.html` extension even when they emit JSON-LD or `<script>` blocks — Hugo doesn't care about extension, but consistency helps grep.
 
 ## Partial composition
 

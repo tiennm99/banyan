@@ -1,5 +1,5 @@
 {{- /* Markdown version of the bio page, for READMEs and AI agents.
-       Rendered only when the site registers a "Markdown" output format and
+       Rendered only when the site registers a "markdown" output format and
        lists it in outputs.home (see README, "Markdown output"). It mirrors
        bio-card.html: sections win over flat links, and links outside their
        visibility window are skipped. */ -}}

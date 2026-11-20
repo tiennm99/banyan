@@ -1,6 +1,6 @@
 {{- /* Google Analytics 4 loader.
        Emits nothing when params.analytics.measurementId is unset/empty.
-       Pairs with data-analytics-event attrs added by partials/link-button.html.
+       Pairs with data-analytics-event attrs added by _partials/link-button.html.
        GA4 sets cookies — site operator is responsible for GDPR/PECR/CPRA consent. */ -}}
 {{- $a := site.Params.analytics -}}
 {{- if and $a $a.measurementId -}}
